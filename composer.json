@@ -1,0 +1,8 @@
+{
+  "name": "kwbg/drive-link-converter",
+  "description": "WordPress plugin to convert Google Drive links into streamable audio players using a service account.",
+  "type": "project",
+  "require": {
+    "google/apiclient": "^2.15"
+  }
+}

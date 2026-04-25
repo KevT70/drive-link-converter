@@ -1,0 +1,14 @@
+# Composer dependencies - install locally with: composer install
+vendor/
+
+# Google service account - never commit credentials
+service-account.json
+
+# Plugin error log
+kwbg-error.log
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp

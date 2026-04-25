@@ -1,0 +1,229 @@
+/* ================================
+   KWBG Drive Converter Scoped Theme
+   Kev Thomas Dec '25
+   ================================ */
+
+.kwbg-drive-player {
+  max-width: 600px;
+  margin: 20px 0;
+  padding: 0;
+  background: #f9f9f9;
+  border-radius: 8px;
+  text-align: left;
+}
+
+/* Controls bar */
+.kwbg-drive-player .plyr__controls {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  justify-content: flex-start !important;
+  background-color: #d62923 !important;   /* KWBG red */
+  color: #fff !important;
+  border-radius: 0 0 8px 8px;
+  padding: 6px 10px;
+  gap: 12px;
+}
+
+/* Play button fixed size */
+.kwbg-drive-player .plyr__control[data-plyr="play"] {
+  flex: 0 0 auto !important;
+}
+
+/* Normalize play/pause and mute button size */
+.kwbg-drive-player .plyr__control[data-plyr="play"],
+.kwbg-drive-player .plyr__control[data-plyr="mute"] {
+  font-size: 1rem !important;
+  padding: 4px 6px !important;
+  width: auto !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease;
+}
+
+/* Shrink SVG icons for visual balance */
+.kwbg-drive-player .plyr__control[data-plyr="play"] svg,
+.kwbg-drive-player .plyr__control[data-plyr="mute"] svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Toggle play/pause icons */
+.kwbg-drive-player .plyr__control[aria-pressed="false"] .icon--pressed,
+.kwbg-drive-player .plyr__control[aria-pressed="true"] .icon--not-pressed {
+  display: none !important;
+}
+
+/* Hover & active states */
+.kwbg-drive-player .plyr__control:hover {
+  background-color: rgba(255,255,255,0.15);
+  transform: scale(1.05);
+}
+.kwbg-drive-player .plyr__control[aria-pressed="true"] {
+  background-color: rgba(255,255,255,0.25);
+}
+
+/* Progress container flexes to fill middle space */
+.kwbg-drive-player .plyr__progress__container {
+  flex: 1 1 auto !important;
+}
+
+/* Progress bar itself */
+.kwbg-drive-player .plyr__progress {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Seek slider with accent track */
+.kwbg-drive-player .plyr__progress input[type=range] {
+  width: 140px !important;
+  max-width: 140px !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  box-sizing: border-box;
+}
+.kwbg-drive-player .plyr__progress input[type=range]::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #d62923, #ff6b6b);
+}
+.kwbg-drive-player .plyr__progress input[type=range]::-moz-range-track {
+  background: linear-gradient(to right, #d62923, #ff6b6b);
+}
+
+/* Time labels: inline, pill styling */
+.kwbg-drive-player .plyr__time--current,
+.kwbg-drive-player .plyr__time--duration {
+  flex: 0 0 auto !important;
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 2px 6px !important;
+  font-size: 0.75rem !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+
+/* Cancel sibling margin between current and duration */
+.kwbg-drive-player .plyr__controls > .plyr__time--current + .plyr__time--duration {
+  margin-left: 0 !important;
+}
+
+/* Slash separator */
+.kwbg-drive-player .plyr__time--duration::before {
+  content: "/" !important;
+  margin: 0 2px !important;
+  color: #fff !important;
+}
+
+/* Volume: fixed size, anchored right */
+.kwbg-drive-player .plyr__volume {
+  flex: 0 0 auto !important;
+  white-space: nowrap;
+}
+
+.kwbg-drive-player .plyr__volume input[type=range] {
+  width: 70px !important;
+  max-width: 70px !important;
+}
+
+/* Branded volume thumb */
+.kwbg-drive-player .plyr__volume input[type=range]::-webkit-slider-thumb {
+  background: #fff;
+  border: 2px solid #d62923;
+  border-radius: 50%;
+}
+.kwbg-drive-player .plyr__volume input[type=range]::-moz-range-thumb {
+  background: #fff;
+  border: 2px solid #d62923;
+  border-radius: 50%;
+}
+
+/* Transcription formatting */
+.kwbg-transcript-wrapper {
+    margin-top: 1.5rem;
+}
+
+.kwbg-transcript-toggle {
+    background: #005bbb;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    margin-left: 8px;
+}
+
+.kwbg-transcript-toggle:hover {
+    background: #004999;
+}
+
+.kwbg-transcript-block {
+    background: #f7f7f7;
+    color: #000;
+    padding: 1.25rem;
+    border-radius: 6px;
+    line-height: 1.55;
+    font-size: 1rem;
+}
+
+.kwbg-transcript-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.kwbg-transcript-text p {
+    margin-bottom: 1rem;
+}
+
+.kwbg-transcript-pending {
+    display: inline-block;
+    background: #005bbb;     /* same blue as your toggle button */
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.kwbg-transcript-pending em {
+    color: #ffffff;          /* override theme <em> styling */
+    font-style: normal;
+}
+
+/* Responsive tweak */
+@media (max-width: 480px) {
+  .kwbg-drive-player .plyr__controls {
+    flex-wrap: wrap !important;
+  }
+  .kwbg-drive-player .plyr__progress input[type=range] {
+    width: 120px !important;
+    max-width: 120px !important;
+  }
+}
+
+/* Force transcript to be visible when not hidden */
+.kwbg-transcript-block {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* Hide only when the hidden attribute is present */
+.kwbg-transcript-block.kwbg-hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    max-height: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
