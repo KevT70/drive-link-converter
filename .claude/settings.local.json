@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(git -C \"c:\\\\wordpress-plugins\\\\KWBG\\\\drive-link-converter\" log --oneline -5)"
+    ]
+  }
+}
