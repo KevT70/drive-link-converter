@@ -665,6 +665,7 @@ function kwbg_transcribe_audio($file_path, $mime_type = 'audio/mpeg') {
         CURLOPT_LOW_SPEED_LIMIT => 0,
         CURLOPT_SSL_VERIFYPEER  => false,
         CURLOPT_SSL_VERIFYHOST  => 0,
+        CURLOPT_SSLVERSION      => CURL_SSLVERSION_TLSv1_2,
     ]);
 
     $response = curl_exec($ch);
