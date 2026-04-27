@@ -674,8 +674,10 @@ function kwbg_transcribe_audio($file_path, $mime_type = 'audio/mpeg') {
 
     if ($error) return ['error' => 'cURL error: ' . $error];
 
+    error_log('KWBG transcription raw response: ' . $response);
+
     $data = json_decode($response, true);
-    if (!isset($data['text'])) return ['error' => 'Invalid response from transcription server'];
+    if (!isset($data['text'])) return ['error' => 'Invalid response from transcription server. Raw: ' . $response];
 
     return ['text' => $data['text']];
 }
@@ -687,6 +689,8 @@ add_action('kwbg_process_transcripts_event', 'kwbg_process_transcripts');
 
 function kwbg_process_transcripts() {
     global $wpdb;
+
+    if (function_exists('set_time_limit')) @set_time_limit(0);
 
     require_once ABSPATH . 'wp-admin/includes/file.php';
 
